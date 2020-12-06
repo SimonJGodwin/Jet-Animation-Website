@@ -1,0 +1,204 @@
+@font-face{
+	font-family: "ROG";
+	src: url(./font/ROGFontsv1.6-Regular.ttf);
+
+}
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	font-size: 100px;
+	color: white;
+}
+
+body {
+	font-family: "ROG", sans-serif;
+	background-color: black;
+	height: 100%;
+    background-image: url(./Images/clear_sky.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.clouds_transparent {
+	width: 100%;
+	margin: 0;
+	padding: 90% 0 0 0;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	overflow: hidden;
+	background-image: url(./Images/clouds_transparent_edit.png);
+	animation: clouds_anim 75s linear infinite;
+	background-repeat: repeat;
+	z-index: -1;
+	height: 100%;
+  }
+  
+  @keyframes clouds_anim{
+	0%{background-position: 0 0;}
+	100%{background-position:-2200px 0;}
+  }
+
+.header{
+	display: flex;
+	width: 100%;
+}
+
+.headerText{
+	position: relative;
+	float: left;
+	width: 100%;
+	left: -25%;
+	animation: fadeIn ease 10s;
+	text-align: center;
+	-webkit-text-stroke: 0.1px black;
+	z-index: -3;
+}
+
+.headerEnding {
+	float: left;
+	position: fixed;
+	left: 5%;
+	width: 100%;
+	animation: fadeIn ease 5s;
+	-webkit-text-stroke: 0.1px black;
+	z-index: -4;
+}
+
+.backgroundbox {
+	position: relative;
+	background-color: rgba(0, 0, 0, 0.3);
+	max-width: 1200px;
+	padding: 20px;
+	margin: 30px auto;
+	max-height: 1200px;
+	overflow: hidden;
+	text-align: center;
+}
+.animationContainer{
+	display: flex;
+	width: 100%;
+  }
+  
+  .jet{
+	position: fixed;
+	bottom: 10%;
+	left: 0;
+	width: 500px;
+	height: auto;
+	animation: swoosh 3s linear infinite;
+	animation-fill-mode: forwards;
+	z-index: -2;
+  }
+  
+.jet img{
+	position: relative;
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+  @keyframes swoosh{
+	0%{
+	  transform: translateX(-100vw);
+	}
+	100%{
+	  transform: translateX(100vw);
+	}
+   
+  }
+
+.parachute{
+    position: fixed;
+    left: 40%;
+    width: 500px;
+    height: 500px;
+    animation: wiggle 3s alternate ease-in-out infinite, falling-down 20s linear infinite forwards;
+	transform-origin: top center;
+	z-index: -5;
+}
+
+.parachute img{
+	position: relative;
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.arrow{
+    position: fixed;
+    right: 0;
+	bottom: 40%;
+	height: auto;
+	width: 100px;
+	z-index: 2;
+}
+.back-arrow {
+    position: fixed;
+    left: 0;
+    bottom: 40%;
+	transform: rotate(180deg);
+	height: auto;
+	width: 100px;
+	z-index: 3;
+}
+
+.arrow img, .back-arrow img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+@keyframes falling-down{
+  0%{
+    top: -50vh;
+  }
+  100%{
+	top: 100vh;
+	visibility: hidden;
+  }
+   
+}
+
+@keyframes wiggle{
+	0%{
+	  transform: rotate(-45deg);
+	}
+	100%{
+	  transform: rotate(45deg);
+	}
+	 
+  }
+
+  .fade-in-text {
+	animation: fadeIn ease 10s;
+	-webkit-animation: fadeIn ease 10s;
+	font-size: 30px;
+	text-align: center;
+	color: white;
+	-webkit-text-stroke: 0.1px white;
+	z-index: 2;
+	position: relative;
+}
+  @keyframes fadeIn {
+	0% {
+	  opacity:0;
+	}
+	100% {
+	  opacity:1;
+	}
+  }
+  
+  @-webkit-keyframes fadeIn {
+	0% {
+	  opacity:0;
+	}
+	100% {
+	  opacity:1;
+	}
+}
+
